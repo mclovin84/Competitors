@@ -1,0 +1,83 @@
+=== VARIABLES (change these 5, nothing else) ===
+NICHE:    [e.g. Water Damage Restoration / Solar Installation / Roofing]
+CITY:     [e.g. Arlington]
+STATE:    [e.g. TX]
+REGION:   [county or metro, e.g. Tarrant County]
+BUSINESS: [e.g. Arlington Water Restoration]
+
+The competitor sites to analyze are the site folders in this directory.
+
+=== PHASE 1: RESEARCH + ANALYZE (do this, then STOP) ===
+
+Step A — Local research:
+Figure out what's locally true for [NICHE] in [CITY], [STATE]. List:
+- The real local reasons customers need [NICHE] here (climate, weather, soil, 
+  housing age, regulations, seasonality — whatever actually applies to this city 
+  and this service).
+- Real nearby towns/suburbs in [REGION] this business would serve.
+- Anything that is NOT true of this city that a generic template might wrongly 
+  include (so we can avoid it). For example: a landlocked city has no coastal 
+  weather; a warm city has no snow load.
+Use general knowledge of [CITY]; if unsure on a detail, keep it general rather 
+than inventing specifics.
+
+Step B — Competitor analysis:
+Read every competitor site in this folder. For EACH one, extract:
+- Every page and section they have
+- Every service / sub-service they cover
+- Every topic covered on each page
+- Every FAQ question they answer
+- Approximate word count per page
+- Trust signals and content angles they use
+
+Step C — Coverage map:
+- The union of ALL topics, services, and FAQs across all competitors
+- Gaps: things only one competitor covers (opportunities)
+- Missing: things none cover but a customer would search for (bigger opportunities)
+- The highest word count any competitor reaches per page type (the floor to beat)
+
+Step D — Content plan for the new site:
+Cover EVERYTHING the competitors cover, PLUS the gaps, at 2–3x their depth:
+- Full page list (services, hub pages, blog posts)
+- For each page: its sections + target word count
+- Full FAQ list (more questions than any single competitor)
+- Which topics I'm expanding and which gaps I'm filling
+
+STOP HERE. Show me: the local research (Step A), the coverage map (Step C), and 
+the content plan (Step D). Do NOT write the site yet. Wait for my approval.
+
+=== PHASE 2: WRITE (only after I approve) ===
+Write all content to the approved plan, following these rules:
+
+Depth — out-cover, don't out-pad:
+- Home page ~1,500 words; each service page ~1,000 words
+- Cover MORE topics, sub-services, and FAQs than any competitor
+- Depth = broader coverage + more specific, useful detail — never filler or repetition
+
+Originality (critical):
+- Original wording throughout. Never copy competitor sentences or phrasing.
+- Same topics, my own words, more thoroughly. Duplicate content is penalized.
+
+Localization:
+- Make everything specific to [CITY] using the Step A local research.
+- Never include the "NOT true of this city" items from Step A.
+- Weave in real neighborhoods, local conditions, and nearby towns.
+
+Intent:
+- Write for buyers ready to act (someone with an urgent problem now), not 
+  encyclopedia readers. Commercial, clear, urgent. Every page drives to call or form.
+
+Honesty (hard rule — new site, no operating history):
+- No fabricated licenses, certifications, badges, awards, reviews, testimonials, 
+  years in business, team photos, street address, or owned crews/trucks/equipment.
+- Frame the business as connecting callers with vetted local pros.
+- Allowed trust claims only: 24/7 service (if applicable to niche), free estimates, 
+  fast local response.
+
+SEO (every page):
+- Unique title, one H1, unique meta description, LocalBusiness schema, correct 
+  heading order, internal links between related pages.
+
+Output:
+- Write page by page. For each: URL slug, title tag, meta description, H1, and full 
+  body content, ready to drop into my site template.

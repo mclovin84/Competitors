@@ -1,0 +1,14 @@
+Master Content Prompt — Analyze Competitors + Out-Cover Them
+
+How to use:
+
+
+Save 2–4 competitor sites (browser: Ctrl+S → "Webpage, Complete") into
+competitors/[niche]/site-1/, site-2/, etc. — one folder per competitor.
+Open that folder in Cursor.
+Fill in the 5 VARIABLES at the top of the prompt.
+Paste the whole prompt into Claude Code.
+
+
+Runs in two phases: it analyzes and shows you a plan first, you approve, then it writes.
+Works for ANY niche and ANY city — you only change the 5 variables.

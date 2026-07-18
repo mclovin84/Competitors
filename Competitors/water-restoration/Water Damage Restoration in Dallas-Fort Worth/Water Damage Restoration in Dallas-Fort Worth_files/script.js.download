@@ -1,0 +1,228 @@
+(function ($) {
+  "use strict";
+  $(window).on("load", function () {
+    $(".slider-start").owlCarousel({
+      dots: true,
+      loop: true,
+      animateOut: "fadeOut",
+      mouseDrag: false,
+      loop: true,
+      nav: true,
+      items: 1,
+      autoplay: true,
+      autoplayTimeout: 15000,
+      smartSpeed: 1000,
+    });
+    $(".slider-start").on("translate.owl.carousel", function () {
+      $(".slider-text").removeClass("active");
+    });
+    $(".slider-start").on("translated.owl.carousel", function () {
+      $(".slider-text").addClass("active");
+    });
+    $(".reviews").owlCarousel({
+      mouseDrag: false,
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 10000,
+      smartSpeed: 450,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        992: {
+          items: 1,
+        },
+        1170: {
+          items: 1,
+        },
+      },
+    });
+    $(".child-slider").owlCarousel({
+      mouseDrag: false,
+      margin: 0,
+      loop: true,
+      nav: true,
+      navText: [
+        "<i class='fa fa-long-arrow-left'></i>",
+        "<i class='fa fa-long-arrow-right'></i>",
+      ],
+      autoplayHoverPause: true,
+      autoplay: 5000,
+      smartSpeed: 700,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        768: {
+          items: 2,
+        },
+        992: {
+          items: 1,
+        },
+      },
+    });
+  });
+
+  $(window).on("scroll", function () {
+    if ($(this).scrollTop() > 600) {
+      $(".backtotop").addClass("show");
+    } else {
+      $(".backtotop").removeClass("show");
+    }
+    if ($(this).scrollTop() > 68) {
+      $(".topBar").addClass("topBar-fixed");
+    } else {
+      $(".topBar").removeClass("topBar-fixed");
+    }
+  });
+  $(".menu-icon-in").click(function () {
+    $(this).toggleClass("open");
+  });
+
+  var backtotop = $(".backtotop");
+  var windo = $(window),
+    HtmlBody = $("html, body");
+  backtotop.on("click", function () {
+    HtmlBody.animate(
+      {
+        scrollTop: 0,
+      },
+      1500
+    );
+  });
+  $(".hamburger").on("click", function (e) {
+    e.preventDefault();
+    var mask = '<div class="mask-overlay"></div>';
+    $(mask).hide().appendTo("body").fadeIn("fast");
+    if ($(".dvLeft").hasClass("open")) {
+      $(".mask-overlay").remove();
+      $(".menu-icon-in").removeClass("open");
+    }
+    $(".dvLeft").toggleClass("open");
+    $(".dvside-out,.mask-overlay").on("click", function () {
+      $(".dvLeft").removeClass("open");
+      $(".mask-overlay").remove();
+      $(".menu-icon-in").removeClass("open");
+    });
+  });
+
+  $(document).ready(function ($) {
+    var nav_offset_top = $(".mobile-top").height();
+
+    function mobileTop() {
+      if ($(".mobile-top").length) {
+        $(window).scroll(function () {
+          var scroll = $(window).scrollTop();
+          if (scroll >= nav_offset_top) {
+            $(".mobile-top").addClass("top_fixed");
+          } else {
+            $(".mobile-top").removeClass("top_fixed");
+          }
+        });
+      }
+    }
+    mobileTop();
+
+    var nav_scroll = function () {
+      setTimeout(function () {
+        let divHeight = $("#menubar").height();
+        let menuHeight = $("#ulmenu").height();
+        if (menuHeight > divHeight) {
+          $("#menubar").css("overflow-y", "scroll");
+        } else {
+          $("#menubar").css("overflow-y", "hidden");
+        }
+      }, 500);
+    };
+    nav_scroll();
+    $(window).on("resize", function () {
+      nav_scroll();
+    });
+    $(function () {});
+    $(".navigation ul li span.sub").click(function () {
+      nav_scroll();
+      var box_id = $(this).data("target_");
+      if ($(box_id).is(":visible")) {
+        $(box_id).removeClass("show");
+        $(this).removeClass("fa-minus");
+        $(this).addClass("fa-plus");
+      } else if (!$(box_id).is(":visible")) {
+        $(box_id).addClass("show");
+        $(this).removeClass("fa-plus");
+        $(this).addClass("fa-minus");
+      }
+    });
+    $("img.svg").each(function () {
+      var $img = $(this),
+        imgID = $img.attr("id"),
+        imgClass = $img.attr("class"),
+        imgURL = $img.attr("src");
+      $.get(
+        imgURL,
+        function (data) {
+          var $svg = $(data).find("svg");
+          if (typeof imgID !== "undefined") {
+            $svg = $svg.attr("id", imgID);
+          }
+          if (typeof imgClass !== "undefined") {
+            $svg = $svg.attr("class", imgClass);
+          }
+          $svg = $svg.removeAttr("xmlns:a");
+          $img.replaceWith($svg);
+        },
+        "xml"
+      );
+    });
+  });
+  const mbheader = document.querySelector(".mobile-top");
+  const lapheader = document.querySelector(".topBar");
+  const dvLeft = document.querySelector(".dvLeft");
+  const innerBanner = document.querySelector(".inner-banner");
+  const sliderTop = document.querySelector(".slider-wrapper");
+
+  const dvLeftPaddingTop = () => {
+    dvLeft.style.paddingTop = mbheader.offsetHeight + "px";
+  };
+  dvLeftPaddingTop();
+  window.addEventListener("resize", () => {
+    dvLeftPaddingTop();
+  });
+
+  if (document.querySelector("body").contains(innerBanner)) {
+    const innerBannerPaddingTop = () => {
+      let usableHeight = lapheader.offsetHeight || mbheader.offsetHeight;
+      innerBanner.style.paddingTop = usableHeight + "px";
+    };
+    innerBannerPaddingTop();
+    window.addEventListener("resize", () => {
+      innerBannerPaddingTop();
+    });
+  }
+  if (document.querySelector("body").contains(sliderTop)) {
+    const sliderTopPadding = () => {
+      sliderTop.style.paddingTop = mbheader.offsetHeight + "px";
+    };
+    sliderTopPadding();
+    window.addEventListener("resize", () => {
+      sliderTopPadding();
+    });
+  }
+})(jQuery);
+
+
+document.querySelectorAll(".details-block").forEach((targetFaqBlock) => {
+  const details = targetFaqBlock.querySelectorAll("details");
+
+  details.forEach((targetDetail) => {
+    targetDetail.addEventListener("click", () => {
+      details.forEach((detail) => {
+        if (detail !== targetDetail) {
+          detail.removeAttribute("open");
+        }
+      });
+    });
+  });
+});
+
